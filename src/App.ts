@@ -1,4 +1,4 @@
-import { Fetch } from "./Fetch";
+import { Fetch } from "./Fetch.js";
 
 interface Task {
   id: string;
@@ -7,18 +7,18 @@ interface Task {
 }
 
 export class App {
-  alert :HTMLElement | null; // HTMLElemente quiere decir que puede ser cualquier elemento HTML
+  alert :HTMLDivElement | null; // HTMLElemente quiere decir que puede ser cualquier elemento HTML
   close: HTMLElement | null;
   input: HTMLInputElement; // HTMLInputElement: la interfaz para elementos <input>.
-  arrow: HTMLElement | null;
+  arrow: HTMLDivElement | null;
   table: HTMLTableSectionElement | null; // HTMLTableElement: la interfaz para elementos <table>.
 
   constructor() {
     this.alert  = document.querySelector(".alert"); // HTMLElement quiere decir que puede ser cualquier elemento HTML
-    this.close  = this.alert?.firstElementChild as HTMLElement; 
-    this.input = document.querySelector("input") as HTMLInputElement;
-    this.arrow = document.querySelector(".arrow");
-    this.table = document.querySelector("tbody"); //this.table tiene un error por
+    this.close  = this.alert?.firstElementChild as HTMLElement;     // HTMLSpanElement: la interfaz para elementos <span>.
+    this.input = document.querySelector("input") as HTMLInputElement;   // HTMLInputElement: la interfaz para elementos <input>.
+    this.arrow = document.querySelector(".arrow");    // HTMLDivElement: la interfaz para elementos <div>.
+    this.table = document.querySelector("tbody");    // HTMLTableElement: la interfaz para elementos <table>. 
   }
 
   init = async () => {
